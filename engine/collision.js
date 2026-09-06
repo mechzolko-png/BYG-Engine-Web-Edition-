@@ -1,5 +1,4 @@
 import { formula } from "./math.js"
-import { wall } from "./object.js";
 const form = new formula
 
 export class Collision {

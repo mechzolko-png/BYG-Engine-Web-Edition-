@@ -2,8 +2,6 @@
 import { World } from "./world.js";
 import { Render } from "./render.js";
 import { Random } from "./math.js";
-import { ball } from "./object.js";
-
 
 
 export class PhysicsWorld {

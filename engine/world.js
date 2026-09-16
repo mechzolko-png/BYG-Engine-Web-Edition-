@@ -2,11 +2,8 @@ import { ball } from "./object.js";
 import { Random } from "./math.js";
 import { Collision } from "./collision.js";
 import { wall } from "./object.js";
-import { Interact } from "../interact/basicInteract.js";
 const random = new Random;
 const collision = new Collision;
-const interact = new Interact;
-
 
 export class World {
 
@@ -71,26 +68,46 @@ export class World {
     }
 
     // PHYSICS MAIN FUNCTION
-    update(dt) {
-        this.RenderData = [];
-        for (const object of this.objects) {
-            
-            if (object.type == "ball") {
-                interact.grabBall(object)
-                const obj = object.update(dt);
-                this.RenderData.push(obj);
-            };
+    update(dt,run) {
+        if (run) {
+            this.RenderData = [];
+            for (const object of this.objects) {
+                
+                if (object.type == "ball") {
+                    const obj = object.update(dt);
+                    this.RenderData.push(obj);
+                };
 
-            if (object.type == "wall") {
-                const obj = object.getData();
-                this.RenderData.push(obj)
-            };
+                if (object.type == "wall") {
+                    const obj = object.getData();
+                    this.RenderData.push(obj)
+                };
 
-            
-        };
-        this.coll = collision.update(this.objects);
-        if (this.coll.length > 0) {console.log(this.coll);}
-        return this.coll
+                
+            };
+            this.coll = collision.update(this.objects);
+            if (this.coll.length > 0) {console.log(this.coll);}
+            return this.coll
+        } else if (!run) {
+            this.RenderData = [];
+            for (const object of this.objects) {
+                
+                if (object.type == "ball") {
+                    const obj = object.getData();
+                    this.RenderData.push(obj);
+                };
+
+                if (object.type == "wall") {
+                    const obj = object.getData();
+                    this.RenderData.push(obj)
+                };
+
+                
+            };
+            this.coll = collision.update(this.objects);
+            if (this.coll.length > 0) {console.log(this.coll);}
+            return this.coll
+        }
     };
 
     getRenderData () {

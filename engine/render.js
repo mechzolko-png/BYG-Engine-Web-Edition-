@@ -7,6 +7,11 @@ export class Render {
         this.setUpCanvas();
     }
 
+    // setUpCanvas() {
+    //     this.canvas.width = this.canvas.clientWidth;
+    //     this.canvas.height = this.canvas.clientHeight;
+    // }
+
     setUpCanvas() {
         this.canvas.width = window.innerWidth;
         this.canvas.height = window.innerHeight;

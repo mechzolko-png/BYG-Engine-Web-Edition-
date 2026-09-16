@@ -38,6 +38,10 @@ export class ball {
         this.bp.update(dt);
         return this.object = {x: this.data.x, y: this.data.y, r: this.data.r, type: "ball"};
     };
+
+    getData () {
+        return {x: this.data.x, y: this.data.y, r: this.data.r, type: "ball"}
+    }
 };
 
 export class wall {

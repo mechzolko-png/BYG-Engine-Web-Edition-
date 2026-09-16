@@ -1,3 +1,4 @@
+console.log("API.JS ELINDULT");
 // Engine setup
 import { World } from "./world.js";
 import { Render } from "./render.js";
@@ -13,16 +14,17 @@ export class PhysicsWorld {
         this.random = new Random()
         this.collisions = [];
         this.lastTime = 0;
+        this.canv = this.render.canvas
     }
 
 
-    update (ct) {
+    update (ct,run) {
         // game loop
         const dt = (ct - this.lastTime) / 1000;
 
         this.lastTime = ct;
 
-        this.collisions = this.world.update(dt);
+        this.collisions = this.world.update(dt,run);
         this.render.render(this.world.getRenderData());
     }
 
@@ -95,6 +97,11 @@ export class PhysicsWorld {
     spawn (x,y,vx,vy) {
         let ball = this.world.spawn(x,y,vx,vy);
         return ball;
+    }
+
+    getObjectByID (ID) {
+        let res = this.world.getObjectByID(ID);
+        return res;
     }
 
 }

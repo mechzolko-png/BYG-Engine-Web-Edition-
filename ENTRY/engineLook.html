@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> ENGINE LOOK </title>
-    <style>
-        body {
-            background-color: rgb(17, 17, 17);
-        }
-    </style>
+    <title> ENGINELOOK </title>
+    <link rel="stylesheet" href="engineLook.css">
 </head>
 <body>
-    <canvas id="canvas" class="canvas"></canvas>
+    <button id="stepback" class="stb"> STEPBACK </button>
+    
+    <div class="UI">
+        <div class="viewport">
+            <canvas id="canvas" class="canvas"></canvas>
+        </div>
+
+        <div class="right-bracket">
+            <div class="property"></div>
+            <div class="object-view"></div>
+        </div>
+
+        <div class="left-bracket">
+
+        </div>
+
+        <div class="top-menu">
+
+        </div>
+
+        <div class="console">
+
+        </div>
+
+        <div class="cent-menu">
+            <div class="mode-holder"></div>
+            <div class="cent-holder">
+                <div class="wall" id="placer"></div>
+                <div class="ball" id="spawner"></div>
+                <div class="delete" id="del"></div>
+                <div class="grab" id="graber"></div>
+            </div>
+        </div>
+
+    </div>
+
 </body>
-<script src="../GAME.js" type="module"></script>
+<script src="../engine/main.js" type="module"></script>
 </html>

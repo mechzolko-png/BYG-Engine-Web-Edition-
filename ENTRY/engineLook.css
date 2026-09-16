@@ -1,0 +1,69 @@
+html,
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+}
+
+body {
+    background: #111;
+}
+
+/* =========================
+   MAIN EDITOR GRID
+   ========================= */
+
+.stb {
+    position: fixed;
+}
+
+
+.UI {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    grid-template-rows:50px 1fr 300px;
+}
+
+.right-bracket {
+    grid-row: 2 / 4;
+    grid-column: 3;
+
+    background-color: aqua;
+}
+
+.left-bracket {
+    grid-column: 1;
+    grid-row: 2 / 4;
+
+    background-color: blue;
+}
+
+.top-menu {
+    grid-column: 1 / 4;
+    grid-row: 1;
+    background-color: brown;
+}
+
+.console {
+    grid-column: 2;
+    grid-row: 3;
+    background-color: chartreuse;
+}
+
+
+.viewport {
+    grid-column: 2;
+    grid-row: 2;
+    background-color: yellow;
+}
+
+canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
